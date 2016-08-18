@@ -1,27 +1,27 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
+  <strong><%= House.human_attribute_name('name') %>: </strong>
   <%= @house.name %>
 </p>
 
 <p>
-  <strong>Rent:</strong>
-  <%= @house.rent %>円
+  <strong><%= House.human_attribute_name('rent') %>: </strong>
+  <%= number_with_delimiter @house.rent %><%= t('number.currency.format.unit') %>
 </p>
 
 <p>
-  <strong>Address:</strong>
+  <strong><%= House.human_attribute_name('address') %>: </strong>
   <%= @house.address %>
 </p>
 
 <p>
-  <strong>Age:</strong>
-  <%= @house.age %>年
+  <strong><%= House.human_attribute_name('age') %></strong>
+  <%= @house.age %><%= t('datetime.prompts.year') %>
 </p>
 
 <p>
-  <strong>Note:</strong>
+  <strong><%= House.human_attribute_name('note') %></strong>
   <%= @house.note %>
 </p>
 
@@ -31,20 +31,20 @@
   <h2><%= Station.model_name.human %><%= i + 1 %></h2>
 
   <p>
-    <strong>Route name:</strong>
+    <strong><%= Station.human_attribute_name('route_name') %></strong>
     <%= station.route_name %>
   </p>
 
   <p>
-    <strong>Name:</strong>
+    <strong><%= Station.human_attribute_name('name') %></strong>
     <%= station.name %>
   </p>
 
   <p>
-    <strong>Duration:</strong>
-    <%= station.duration %>分
+    <strong><%= Station.human_attribute_name('duration') %></strong>
+    <%= station.duration %><%= t('datetime.prompts.minute') %>
   </p>
 <% end %>
 
-<%= link_to 'Edit', edit_house_path(@house) %> |
-<%= link_to 'Back', houses_path %>
+<%= link_to t('helpers.edit'), edit_house_path(@house) %> |
+<%= link_to t('helpers.back'), houses_path %>
