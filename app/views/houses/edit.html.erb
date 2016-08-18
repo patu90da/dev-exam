@@ -1,0 +1,6 @@
+<h1><%= House.model_name.human %><%= t '.title' %></h1>
+
+<%= render 'form', house: @house %>
+
+<%= link_to t('helpers.show'), @house %> |
+<%= link_to t('helpers.back'), houses_path %>
