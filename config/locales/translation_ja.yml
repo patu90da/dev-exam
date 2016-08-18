@@ -1,0 +1,40 @@
+ja:
+  helpers:
+    show: 詳細
+    edit: 編集
+    destroy: 削除
+    back: 戻る
+
+    link:
+      create: を登録する
+      submit: を保存する
+      update: を更新する
+  
+  houses:
+    index:
+      title: 一覧
+    new:
+      title: 登録
+    edit:
+      title: 編集
+    show:
+      title: 詳細
+      
+  activerecord:
+    models:
+      house: 物件  #g
+      station: 最寄り駅  #g
+
+    attributes:
+      house:
+        address: 住所  #g
+        age: 築年数  #g
+        name: 物件名  #g
+        note: 備考  #g
+        rent: 賃料  #g
+        stations: 最寄り駅  #g
+
+      station:
+        duration: 徒歩分数  #g
+        name: 駅名  #g
+        route_name: 路線名  #g
