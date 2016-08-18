@@ -7,7 +7,7 @@
 
 <p>
   <strong>Rent:</strong>
-  <%= @house.rent %>
+  <%= @house.rent %>円
 </p>
 
 <p>
@@ -17,13 +17,34 @@
 
 <p>
   <strong>Age:</strong>
-  <%= @house.age %>
+  <%= @house.age %>年
 </p>
 
 <p>
   <strong>Note:</strong>
   <%= @house.note %>
 </p>
+
+<hr/>
+
+<% @house.stations.each_with_index do |station, i| %>
+  <h2><%= Station.model_name.human %><%= i + 1 %></h2>
+
+  <p>
+    <strong>Route name:</strong>
+    <%= station.route_name %>
+  </p>
+
+  <p>
+    <strong>Name:</strong>
+    <%= station.name %>
+  </p>
+
+  <p>
+    <strong>Duration:</strong>
+    <%= station.duration %>分
+  </p>
+<% end %>
 
 <%= link_to 'Edit', edit_house_path(@house) %> |
 <%= link_to 'Back', houses_path %>
